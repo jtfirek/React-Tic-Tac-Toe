@@ -17,6 +17,28 @@ One way we can make our components interactive is by including a onClick functio
 Now that the component is interactive we can alter the state of component, but first we need to give the component state
 We do this by adding a constructor to the component and setting this.state
 
+### Lifting State
+
+In our case we need to use the state from all the child squares to determine a winner of the game. 
+we use super(props) in the constructor of the parent to get the state of the entire board. 
+
+## Benefits of Immutability
+
+We use slice to create a copy of the state array instead of modifying the existing array. This is an example of using immutability instead of mutability.
+
+### Complex features are simplified
+For example we implemented a "time travel" feature allowing us to undo moves. This is made much easier as the previous verisons of the game are still intact.
+
+### Detecting Changes
+We can easily detect changes by comparing the current state to our previous states that we have saved
+
+### Determining when to re-render in React
+The main benefit of immutability is that it allows us to build pure components in React. Immutable data can easily determine if changes have been made so we know to re-render
+
+## Function Components
+
+function components only contain a rend method and do not have any state. They still can take props as input like our Square function
+
 
 
 ## Available Scripts
